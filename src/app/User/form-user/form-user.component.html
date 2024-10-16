@@ -1,0 +1,25 @@
+<div class="card my-4">
+  <div class="card-header">
+    <h4>Agregar usuario</h4>
+  </div>
+  <div class="card-body">
+    <form action="" (submit)="guardarUsuario()">
+      <div class="row">
+        <div class="col">
+          <label for="inputEmail4">Nombre</label>
+          <input type="text" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col">
+          <label for="inputEmail4">Email</label>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+      </div>
+      <div class="row my-4">
+        <div class="col-md-4">
+          <a class="btn btn-danger" routerLink="Usuarios">Regresar</a>
+          <button type="submit" class="btn btn-primary mx-3">Guardar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
