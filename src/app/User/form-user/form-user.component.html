@@ -1,23 +1,29 @@
-<div class="card my-4">
-  <div class="card-header">
+<div class="card  border-primary my-4">
+  <div class="card-header border-primary text-bg-primary">
     <h4>Agregar usuario</h4>
   </div>
   <div class="card-body">
-    <form action="" (submit)="guardarUsuario()">
+    <form action="" [formGroup]="userForm" (submit)="guardarUsuario()">
+      <div class="row" [hidden]="alert">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+           Usuario registrado correctamente
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="updateAlert()"></button>
+        </div>
+      </div>
       <div class="row">
         <div class="col">
           <label for="inputEmail4">Nombre</label>
-          <input type="text" class="form-control" id="inputEmail4">
+          <input type="text" class="form-control" formControlName="nombre" placeholder="Jose Luis">
         </div>
         <div class="col">
           <label for="inputEmail4">Email</label>
-          <input type="email" class="form-control" id="inputEmail4">
+          <input type="email" class="form-control" formControlName="correo" placeholder="correo@gmail.com">
         </div>
       </div>
       <div class="row my-4">
         <div class="col-md-4">
           <a class="btn btn-danger" routerLink="Usuarios">Regresar</a>
-          <button type="submit" class="btn btn-primary mx-3">Guardar</button>
+          <button type="submit" class="btn btn-primary mx-3" [disabled]="!userForm.valid">Guardar</button>
         </div>
       </div>
     </form>
